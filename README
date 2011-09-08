@@ -1,0 +1,48 @@
+This is a sample page directory that includes the formfield script source.
+
+The formfield script creates a form field that can be either hidden, readonly, or (by default) editable.
+
+Example:
+$("#test21").formField([{fieldName:"test21", type:"text", value:"awesome", 
+        label:"Test 21", messages:"howdy partner", 
+  			errors:"reach for the sky!", translate:"western", required:true, decorators:[], 
+        lookup:{group:"people", populate:"emplid:test21;name:test21-Translate"}}]);
+
+Turns this:
+<div id="test21"> </div>
+
+Into this:
+<div id="test21">
+  <div id="formField-test21" class="formField editableField required hasError">
+    <label for="test21">Test 21</label>
+    <span class="messages" id="test21-Messages">howdy partner</span>
+    <input type="text" size="10" maxlength="10" id="test21" name="test21" value="awesome" aria-describedby="test21-Errors test21-Messages test21-Translate" aria-required="true" aria-invalid="true">
+    <button class="lookup" type="button" title="Lookup Test 21" id="test21-Lookup"> </button>
+    <span class="translate" id="test21-Translate">western</span>
+    <span class="errors" id="test21-Errors">reach for the sky!</span>
+  </div>
+</div>
+
+Each form field must have a fieldName.  Additionally they may optionally have:
+- label (default: name)
+- value
+- messages
+- errors
+- type (default: text)
+- translate
+- lookup
+- decorators
+
+The default templates are aria accessible. The templates are written using the jqote2 default syntax (which is very jsp like). 
+
+I use jqote2 because it is faster, easier, and more flexible than the jQuery standard templates.
+
+The templates may be changed on the fly. Decorators may be added that run after the field is loaded. A default set of decorators is configurable.
+
+The css and templating engine are not so dynamic (sadly)-- they are loaded as part of the require script, though the hooks are there to change the templating engine. You can easily just modify the script to be how you need.
+
+TODO:
+- Extend types to support textarea, select, checkbox, and radio.
+- Consider moving the default template locations to some kind of header/property file that the require reads first.
+- Consider using jquery-require so multiple jquery versions could be used.
+
