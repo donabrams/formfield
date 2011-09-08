@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>FormField module test</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" data-main="scripts/main" src="scripts/require.js"></script>
+</head>
+<body>
+<h1>FormFields static examples</h1>
+<div class="hiddenField">
+	<input type="hidden" value="${value}" name="${name}"/>
+</div>
+<div class="readonlyField">
+	<span class="label" id="${name}-Label">${label}</span>
+	<span class="value" aria-readonly="true" aria-labelledby="${name}-Label" aria-describedby="${name}-Translate">${value}</span>
+	<span class="translate" id="${name}-Translate">${translate}</span>
+</div>
+<div class="editableField required hasError">
+	<label for="${name}">${label}</label>
+	<span class="messages" id="${name}-Messages">${messages}</span>
+	<input type="text" size="10" maxlength="10" id="${name}" name="${name}" 
+			value="${value}" aria-describedby="${name}-Errors ${name}-Messages ${name}-Translate" aria-required="${required}" aria-invalid="true"/> 
+	<button class="lookup" type="button" title="Lookup ${label}"> </button> 
+	<span class="translate" id="${name}-Translate">${translate}</span> 
+	<span class="errors" id="${name}-Errors">${errors}</span> 
+</div>
+properties:
+<ul>
+<li>value</li>
+<li>fieldName</li>
+<li>translate</li>
+<li>messages</li>
+<li>required</li>
+<li>label</li>
+<li>errors</li>
+<li>hidden</li>
+<li>readonly</li>
+<li>type</li>
+</ul>
+<h1>FormFields generated via script</h1>
+<div id="testError1"> </div>
+<div id="testError2"> </div>
+<div id="test1"> </div>
+<div id="test2"> </div>
+<div id="test3"> </div>
+<div id="test4"> </div>
+<div id="test5"> </div>
+<div id="test6"> </div>
+<div id="test7"> </div>
+<div id="test8"> </div>
+<div id="test9"> </div>
+<div id="test10"> </div>
+<div id="test11"> </div>
+<div id="test12"> </div>
+<div id="test13"> </div>
+<div id="test14"> </div>
+<div id="test15"> </div>
+<div id="test16"> </div>
+<div id="test17"> </div>
+<div id="test18"> </div>
+<div id="test19"> </div>
+<div id="test20"> </div>
+<div id="test21"> </div>
+</body>
+</html>

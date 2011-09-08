@@ -1,0 +1,22 @@
+<div id="formField-<%=this.fieldName%>" class="formField readonlyField">
+	<span class="label" id="<%=this.fieldName%>-Label">
+		<% if (this.label) { %>
+			<%=this.label%>
+		<% } else {%>
+			<%=this.fieldName%>
+		<% } %>
+	</span>
+	<span class="value" aria-readonly="true" 
+		<% if (this.label) { %>
+			aria-labelledby="<%=this.fieldName%>-Label"
+		<% } %>
+		<% if (this.translate) { %>
+			aria-describedby="<%=this.fieldName%>-Translate"
+		<% } %>
+	>
+		<%=this.value ? this.value : ""%>
+	</span>
+	<% if (this.translate) { %>
+		<span class="translate" id="<%=this.fieldName%>-Translate"><%=this.translate%></span>
+	<% } %>
+</div>

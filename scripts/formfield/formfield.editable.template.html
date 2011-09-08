@@ -1,0 +1,37 @@
+<div id="formField-<%=this.fieldName%>" class="formField editableField<% if (this.required) { %> required<% } %><% if (this.errors) { %> hasError<% } %>">
+	<label for="<%=this.fieldName%>">
+		<% if (this.label) { %>
+			<%=this.label%>
+		<% } else {%>
+			<%=this.fieldName%>
+		<% } %>
+	</label>
+	<% if (this.messages) { %>
+		<span class="messages" id="<%=this.fieldName%>-Messages"><%=this.messages%></span>
+	<% } %>
+	<% if (this.type == "text") { %>
+		<input type="text" size="10" maxlength="10" 
+				id="<%=this.fieldName%>"
+				name="<%=this.fieldName%>" 
+				<% if (this.value) { %>
+					value="<%=this.value ? this.value : ""%>" 
+				<% } %>
+				<% if (this.errors || this.messages || this.translate) { %>
+					aria-describedby="<% if (this.errors) { %><%=this.fieldName%>-Errors<% } %><% if (this.messages) { %> <%=this.fieldName%>-Messages<% } %><% if (this.translate) { %> <%=this.fieldName%>-Translate<% } %>"
+				<% } %>
+				aria-required="<% if (this.required) { %>true<%} else {%>false<% } %>" 
+				<% if (this.errors) { %>
+					aria-invalid="true"
+				<% } %>
+		/>
+	<% } %>
+	<% if (this.lookup) { %>
+		<button class="lookup" type="button" title="Lookup <% if (this.label) { %><%=this.label%><% } else { %><%=this.fieldName%><% } %>" id="<%=this.fieldName%>-Lookup"> </button>
+	<% } %>
+	<% if (this.translate) { %>
+		<span class="translate" id="<%=this.fieldName%>-Translate"><%=this.translate%></span> 
+	<% } %>
+	<% if (this.errors) { %>
+		<span class="errors" id="<%=this.fieldName%>-Errors"><%=this.errors%></span> 
+	<% } %>
+</div>
