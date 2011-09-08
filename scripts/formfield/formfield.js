@@ -1,10 +1,10 @@
-require(["jquery.min", 
-		"jquery.jqote2.min", 
-		"text!formfield/formfield.hidden.template.html", 
+require(["text!formfield/formfield.hidden.template.html", 
 		"text!formfield/formfield.readonly.template.html", 
 		"text!formfield/formfield.editable.template.html",
+		"jquery.min", 
+		"jquery.jqote2.min", 
 		"cssx/cssx!formfield/formfield.css"], 
-	function (jquery, jqote, hiddenTemplate, readonlyTemplate, editableTemplate) {
+	function (hiddenTemplate, readonlyTemplate, editableTemplate) {
 		//add a function to do a function on a single object or an array of the objects and return the results similarly
 		$.doEvenIfArray = function(func, obj) {
 				if ($.isArray(obj)) {
@@ -55,18 +55,21 @@ require(["jquery.min",
 					return "ERROR: no fieldName specified";
 				}
 				else if (field.hidden) {
-					return $.jqote(FormField.hiddenTemplate, field);
+					return FormField.renderTemplate(FormField.hiddenTemplate, field);
 				}
 				else if (field.readonly) {
-					return $.jqote(FormField.readonlyTemplate, field);
+					return FormField.renderTemplate(FormField.readonlyTemplate, field);
 				}
 				//editable by default
 				else if (field.type) {
-					return $.jqote(FormField.editableTemplate, field);
+					return FormField.renderTemplate(FormField.editableTemplate, field);
 				}
 				else {
 					return "ERROR: no type specified";
 				}
+			},
+			renderTemplate: function(template, field) {
+				return $.jqote(template, field);
 			}
 		};
 		$.formField = function(args) {
