@@ -22,7 +22,7 @@ requireOnlyIfRequireExists(["jquery.min", "lookup", "fieldset/fieldset"], functi
 		FormButton.defaultDecorators = function() {
 			return [ExampleButtons.debugDecorator];
 		};
-		$("#fieldSetTest").fieldSet({
+		$("#fieldSetTest").fieldSet([{
 				label: "Chart of Accounts",
 				fieldSetName: "fieldset1",
 				messages: "I am the happiness fish!",
@@ -40,7 +40,26 @@ requireOnlyIfRequireExists(["jquery.min", "lookup", "fieldset/fieldset"], functi
 				buttons: [
 					{title:"Display a message", text:"Debug"},
 					{title:"Display a message... again", text:"Debug Again"}]
-		});
+		},
+		{
+				label: "Chart of Accounts 2",
+				fieldSetName: "fieldset2",
+				messages: "I am the happiness fish!",
+				errors: "This is a really really really really really really really really really really really really really really really really really really really really really really long error message.",
+				successes: "This message is successful!",
+				fields: [
+					{fieldName:"test18", type:"text", value:"ITMS110000", label:"Speedtype", 
+							messages:"Your speedtype must be made of cows and pigs and gophers and all sorts of nonedible cute things that grow on farms.", 
+							errors:"reach for the sky!", translate:"IT Management Info Services", required:true, 
+							lookup:{group:"people", populate:"emplid:test18;name:test18-Translate"}},
+					{type:"separatingLabel", text:"Or"},
+					{fieldName:"test19", type:"text", value:"awesome", label:"Test 19", messages:"howdy partner", 
+							errors:"reach for the sky!", translate:"western", required:true, 
+							lookup:{group:"people", populate:"emplid:test19;name:test19-Translate"}}],
+				buttons: [
+					{title:"Display a message", text:"Debug"},
+					{title:"Display a message... again", text:"Debug Again"}]
+		}]);
 				
 
 		$("#testError1").formField({});

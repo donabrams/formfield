@@ -31,7 +31,7 @@ require(["text!fieldset/fieldset.template.html",
 									}
 								}
 								if (fieldset.buttons) {
-									$("#FieldSet-" + fieldset.fieldSetName + " .buttons", node).formButton(fieldset.buttons, node);
+									$(".buttons", node).formButton(fieldset.buttons, node);
 								}
 								return node;
 							};

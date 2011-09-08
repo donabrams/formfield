@@ -23,7 +23,7 @@ require(["text!formbutton/formbutton.template.html",
 				return $.doEvenIfArray(function(args, target) {
 						var button = target || args.target || {};
 						button.render = function() {
-							return FormField.render(button);
+							return FormButton.render(button);
 						};
 						button.decorate = function(node, actionScope) {
 							if (this.decorators) {
@@ -61,8 +61,9 @@ require(["text!formbutton/formbutton.template.html",
 			this.each(function(a) {
 				$.doEvenIfArray(
 						function(button,toAppendTo, actionScope) {
-							var node = $(toAppendTo).append(button.render());
-							field.decorate(node, actionScope);
+							var node = $(button.render());
+							$(toAppendTo).append(node);
+							button.decorate(node, actionScope);
 						}, 
 						button,
 						this,
