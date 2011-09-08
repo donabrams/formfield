@@ -1,0 +1,24 @@
+<fieldset id="FieldSet-<%=this.fieldSetName%>" class="FieldSet">
+	<legend>
+		<% if (this.label) { %>
+			<%=this.label%>
+		<% } else {%>
+			<%=this.fieldSetName%>
+		<% } %>
+	</legend>
+	<% if (this.messages) { %>
+		<div class="messages" id="FieldSet-<%=this.fieldSetName%>-Messages"><%=this.messages%></div>
+	<% } %>
+	<% if (this.errors) { %>
+		<div class="errors" id="FieldSet-<%=this.fieldSetName%>-Errors"><%=this.errors%></div>
+	<% } %>
+	<% if (this.successes) { %>
+		<div class="successes" id="FieldSet-<%=this.fieldSetName%>-Successes"><%=this.successes%></div>
+	<% } %>
+	<% if (this.fields) { %>
+		<div class="fields"> </div>
+	<% } %>
+	<% if (this.buttons) { %>
+		<div class="buttons"> </div>
+	<% } %>
+</fieldset>

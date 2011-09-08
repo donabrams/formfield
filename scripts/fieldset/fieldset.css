@@ -1,0 +1,65 @@
+fieldset.FieldSet {
+    display: inline-block;
+    padding: 15px;
+    overflow: visible;
+    border: 1px solid #9091C8;
+    /* width: 320px; temporary for testing only! */
+    margin-bottom: 5px;
+}
+fieldset.FieldSet legend {
+    margin: .6em;
+    padding: 0.3em;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #336;
+}
+fieldset.FieldSet div.errors {
+    padding-left: 20px;
+    background: transparent url('error.gif') no-repeat scroll left top;
+    color: #FF3F3F;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.7em;
+    text-align: left;
+}
+fieldset.FieldSet div.successes {
+    padding-left: 20px;
+    background: transparent url('success.gif') no-repeat scroll left top;
+    color: #047A04;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.7em;
+    text-align: left;
+}
+fieldset.FieldSet div.messages {
+    color: #336;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.7em;
+    text-align: left;
+}
+fieldset.FieldSet .fields {
+    margin: 0;
+    margin-top: 0.6em;
+    padding: 10px;
+}
+fieldset.FieldSet .fields > div {
+    margin: 0;
+		margin-left: 10px;
+		margin-bottom: 5px;
+    overflow: visible;
+    padding: 0.5em 0 0 0;
+    white-space: normal;
+    text-align: left;
+    line-height: 100%;
+}
+fieldset.FieldSet .fields .separatingLabel {
+		margin-left: 5px;
+}
+fieldset.FieldSet .buttons {
+    text-align: center;
+    padding-top: 10px;
+}
