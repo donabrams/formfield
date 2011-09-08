@@ -35,14 +35,22 @@ Each form field must have a fieldName.  Additionally they may optionally have:
 
 The default templates are aria accessible. The templates are written using the jqote2 default syntax (which is very jsp like). 
 
-I use jqote2 because it is faster, easier, and more flexible than the jQuery standard templates.
+I use jqote2 because it is faster, easier, and more flexible than the standard jQuery templates. I hit unsolvable corner cases that couldn't be rendered using the standard jQuery templates the first time I tried to use it.
 
-The templates may be changed on the fly. Decorators may be added that run after the field is loaded. A default set of decorators is configurable.
+The templates may be changed on the fly. Decorators may be added that run after the field is rendered. The default set of decorators is configurable.
 
 The css and templating engine are not so dynamic (sadly)-- they are loaded as part of the require script, though the hooks are there to change the templating engine. You can easily just modify the script to be how you need.
 
+Dependencies:
+- jQuery
+- jqote2
+- require.js
+- text.js for require.js
+- cssx for require.js
+
 TODO:
 - Extend types to support textarea, select, checkbox, and radio.
+- Make use of require.js optional
 - Consider moving the default template locations to some kind of header/property file that the require reads first.
 - Consider using jquery-require so multiple jquery versions could be used.
 
