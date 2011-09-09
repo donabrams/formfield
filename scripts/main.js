@@ -1,5 +1,5 @@
 requireOnlyIfRequireExists = function(deps, func) { if (require) {require(deps, func);} else { func(); }};
-requireOnlyIfRequireExists(["jquery.min", "lookup", "fieldset/fieldset"], function () {
+requireOnlyIfRequireExists(["jquery.min", "lookup", "fieldset/fieldset", "coaStateMachine"], function () {
 	$(function() {
 		var UDelLookups = UDelLookups || {};
 		UDelLookups.lookupDecorator = function(node, field) {
@@ -22,6 +22,7 @@ requireOnlyIfRequireExists(["jquery.min", "lookup", "fieldset/fieldset"], functi
 		FormButton.defaultDecorators = function() {
 			return [ExampleButtons.debugDecorator];
 		};
+
 		$("#fieldSetTest").fieldSet([{
 				label: "Chart of Accounts",
 				fieldSetName: "fieldset1",
@@ -60,7 +61,7 @@ requireOnlyIfRequireExists(["jquery.min", "lookup", "fieldset/fieldset"], functi
 					{title:"Display a message", text:"Debug"},
 					{title:"Display a message... again", text:"Debug Again"}]
 		}]);
-				
+
 
 		$("#testError1").formField({});
 		$("#testError2").formField({fieldName:"testError2"});
